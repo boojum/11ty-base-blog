@@ -42,6 +42,7 @@ module.exports = (config) => {
   })
 
   return {
+    pathPrefix: '11ty-base-blog',
     dir: { input: 'src' },
     dataTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
