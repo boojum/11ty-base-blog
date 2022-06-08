@@ -1,0 +1,26 @@
+name: publish
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  use-build:
+    uses: boojum/11ty-base-blog/.github/workflows/build.yml@master
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+          path: _site
+
+      - name: publish to github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site
