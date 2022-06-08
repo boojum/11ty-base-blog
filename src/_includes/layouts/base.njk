@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#317EFB"/>
+    <title>11ty-base-blog</title>
+    <link rel="stylesheet" href="{{ '/assets/css/index.css' | url }}">
+    <link rel="icon" href="{{ '/favicon.ico' | url }}" sizes="any"/>
+    <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml"/>
+    <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | url }}">
+    <link rel="manifest" href="{{ '/manifest.webmanifest' | url }}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="{{ '/' | url }}">home</a>
+          </li>
+          <li>
+            <a href="{{ '/blog' | url }}">blog</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    {{ content | safe }}
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "name": "11ty-base-blog",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "eleventy --config=eleventy.config.js --serve",
+    "prebuild": "rimraf ./_site",
+    "build": "eleventy --config=eleventy.config.js",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:js": "eslint --ignore-path .gitignore --cache --cache-location cache .",
+    "lint:css": "stylelint --cache --cache-location cache --quiet --fix src/**/*.css",
+    "format": "prettier --ignore-path .gitignore --loglevel warn --write ./src/**/*.{js,json,css,md,html}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boojum/11ty-base-blog.git"
+  },
+  "keywords": [],
+  "author": "Tomasz Moskal <boojum@stercus-accidit.com> (https://stercus-accidit.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boojum/11ty-base-blog/issues"
+  },
+  "homepage": "https://github.com/boojum/11ty-base-blog#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.11",
+    "@evilmartians/lefthook": "^0.8.0",
+    "@lhci/cli": "^0.9.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "google-fonts-helper": "^3.0.0",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.4.14",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.6.0",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "stylelint": "^14.8.5",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^7.0.0"
+  }
+}

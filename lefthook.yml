@@ -1,0 +1,16 @@
+skip_output:
+  - meta
+  - success
+
+pre-commit:
+  parallel: true
+  commands:
+    stylelint:
+      glob: 'src/**/*.css'
+      run: npm run lint:css {staged_files}
+    eslint:
+      glob: 'src/**/*.js'
+      run: npm run lint:js {staged_files}
+    prettier:
+      glob: 'src/**/*.{js,json,css,md,html}'
+      run: npm run format --write {staged_files}
